@@ -1,11 +1,12 @@
+
 resource "google_compute_instance" "default" {
 name = "test-01"
-machine_type = "n1-stanard-1"
+machine_type = var.machine_type
 zone = "us-east1-b"
 
 boot_disk {
     initialize_params {
-        image = "ubuntu-os-cloud/ubuntu-1604-lts"
+        image = var.image
     }
 }
 
